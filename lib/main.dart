@@ -4,6 +4,12 @@ void main() {
   runApp(const MyApp());
 }
 
+class Task {
+  String title;
+  bool finished;
+  Task({required this.title, this.finished = false});
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -28,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> _daftar = ['Belajar Flutter', 'Kerjakan tugas', 'Tidur'];
+  List<Task> _tasks = [];
   final _controller = TextEditingController();
 
   void _tambah() {
