@@ -100,22 +100,67 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 16),
             Expanded(
-              child: ListView.builder(
-                itemCount: _tasks.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(_tasks[index].title),
-                    leading: Checkbox(
-                      value: _tasks[index].finished,
-                      onChanged: (value) {
-                        setState(() {
-                          _tasks[index].finished = value ?? false;
-                        });
+              child: _tasks.isEmpty
+                  ? const Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.checklist_rounded,
+                            size: 64,
+                            color: Colors.grey,
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            'Belum ada tugas',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: _tasks.length,
+                      itemBuilder: (context, index) {
+                        final task = _tasks[index];
+                        return Card(
+                          elevation: 0,
+                          color: Theme.of(context)
+                              .colorScheme
+                              .surfaceContainerLow,
+                          margin: const EdgeInsets.only(bottom: 8),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: ListTile(
+                            leading: Checkbox(
+                              value: task.finished,
+                              shape: const CircleBorder(),
+                              onChanged: (value) {
+                                setState(() => task.finished = value ?? false);
+                              },
+                            ),
+                            title: Text(
+                              task.title,
+                              style: TextStyle(
+                                decoration: task.finished
+                                    ? TextDecoration.lineThrough
+                                    : null,
+                                color: task.finished ? Colors.grey : null,
+                              ),
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(
+                                Icons.delete_outline,
+                                color: Colors.redAccent,
+                              ),
+                              onPressed: () {
+                                setState(() => _tasks.removeAt(index));
+                              },
+                            ),
+                          ),
+                        );
                       },
                     ),
-                  );
-                },
-              ),
             ),
           ],
         ),
