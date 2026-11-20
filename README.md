@@ -26,8 +26,8 @@ Aplikasi mobile sederhana untuk mencatat daftar tugas harian, dibuat dengan Flut
 ### Langkah
 
 ```bash
-git clone https://github.com/<username>/<nama-repo>.git
-cd <nama-repo>
+git clone https://github.com/MBopal/task-tracker-motion.git
+cd task-tracker-motion
 flutter pub get
 flutter run
 ```
@@ -58,4 +58,4 @@ File APK akan berada di `build/app/outputs/flutter-apk/app-release.apk`.
 
 - Pernyataan:
 
-  "Saya menyatakan bahwa saya memahami alur dan fungsi dari seluruh kode yang ada dalam repositori ini"
+  Saya menyatakan bahwa saya memahami alur dan fungsi dari seluruh kode yang ada dalam repositori ini
