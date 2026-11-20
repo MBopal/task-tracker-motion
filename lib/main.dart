@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void _tambah() {
     if (_controller.text.trim().isEmpty) return;
     setState(() {
-      _daftar.add(_controller.text);
+      _tasks.add(Task(title: _controller.text));
       _controller.clear();
     });
   }
