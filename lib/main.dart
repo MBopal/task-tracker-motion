@@ -18,10 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Task Tracker',
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
       home: const MyHomePage(title: 'Task Tracker'),
     );
   }
@@ -36,13 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Task> _tasks = [];
+  final List<Task> _tasks = [];
   final _controller = TextEditingController();
 
   void _tambah() {
     if (_controller.text.trim().isEmpty) return;
     setState(() {
-      _tasks.add(Task(title: _controller.text));
+      _tasks.add(Task(title: _controller.text.trim()));
       _controller.clear();
     });
   }
