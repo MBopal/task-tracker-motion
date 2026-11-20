@@ -1,17 +1,61 @@
-# task_tracker
+# Task Tracker
 
-A new Flutter project.
+Aplikasi mobile sederhana untuk mencatat daftar tugas harian, dibuat dengan Flutter sebagai studi kasus Open Recruitment Divisi Mobile Programming.
 
-## Getting Started
+## Identitas
 
-This project is a starting point for a Flutter application.
+|          |                 |
+| -------- | --------------- |
+| **Nama** | Muhammad Naufal |
+| **NIM**  | 103012530062    |
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshot
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| Tampilan awal                                   | Tambah tugas                                         | Tandai selesai                                          | Setelah hapus                                              |
+| ----------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------- |
+| ![Tampilan awal](screenshots/tampilan_awal.png) | ![Tambah tugas](screenshots/tampilan_tambahdata.png) | ![Tandai selesai](screenshots/tampilan_taskchecked.png) | ![Setelah hapus](screenshots/tampilan_setelahapustask.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Cara Menjalankan
+
+### Prasyarat
+
+- Flutter SDK (cek dengan `flutter doctor`)
+- Android SDK
+- HP Android dengan USB debugging aktif, atau emulator
+
+### Langkah
+
+```bash
+git clone https://github.com/<username>/<nama-repo>.git
+cd <nama-repo>
+flutter pub get
+flutter run
+```
+
+### Build APK
+
+```bash
+flutter build apk --release
+```
+
+File APK akan berada di `build/app/outputs/flutter-apk/app-release.apk`.
+
+### Deklarasi Penggunaan AI
+
+- Apakah menggunakan AI? Ya
+
+- Tool AI yang digunakan: Claude, Gemini Hydrogen
+
+- Estimasi persentase kontribusi AI: 40 % (Maksimal 40%)
+
+- Bagian kode/fitur yang dibantu AI:
+  - debugging error hot reload
+  - setup Android SDK dan JAVA_HOME
+  - referensi syntax Checkbox dan Padding
+  - Membuat tampilan text field jadi lebih modern
+  - Fitur untuk menghapus task
+  - penjelasan konsep StatefulWidget dan setState
+
+- Pernyataan:
+
+  "Saya menyatakan bahwa saya memahami alur dan fungsi dari seluruh kode yang ada dalam repositori ini"
