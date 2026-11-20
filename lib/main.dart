@@ -69,9 +69,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(onPressed: _tambah, child: const Text('Tambah')),
             Expanded(
               child: ListView.builder(
-                itemCount: _daftar.length,
+                itemCount: _tasks.length,
                 itemBuilder: (context, index) {
-                  return ListTile(title: Text(_daftar[index]));
+                  return ListTile(
+                    title: Text(_tasks[index].title),
+                    leading: Checkbox(
+                      value: _tasks[index].finished,
+                      onChanged: (value) {
+                        setState(() {
+                          _tasks[index].finished = value ?? false;
+                        });
+                      },
+                    ),
+                  );
                 },
               ),
             ),
